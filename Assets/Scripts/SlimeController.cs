@@ -11,7 +11,7 @@ public class SlimeController : MonoBehaviour
     public float blowUpSpeed = 5f;
 
     [Header("Face")]
-    public Transform faceTransform;  // 拖入臉的子物件
+    public Transform faceTransform;  
 
     private Vector3 originalScale;
     private Rigidbody2D rb;
@@ -20,7 +20,7 @@ public class SlimeController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;       // 冻結物理旋轉
+        rb.freezeRotation = true;       
         originalScale = transform.localScale;
     }
 
@@ -72,5 +72,5 @@ public class SlimeController : MonoBehaviour
         isGrounded = false;
     }
 }
-
+    
 

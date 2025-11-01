@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;       // ���ʳt��
-    public float jumpForce = 10f;      // ���D�O�q
+    public float moveSpeed = 5f;      
+    public float jumpForce = 10f;       
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -14,18 +14,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // ���k����
+        
         float move = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
 
-        // ���D
+        
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
-    // �ˬd�O�_��Ĳ�a��
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

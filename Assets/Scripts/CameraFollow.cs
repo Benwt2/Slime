@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothedPosition;
 
-            // 保持相機的 z 值不變（2D 遊戲常用）
+            // 保持相機的 z 值不變
             transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
         }
     }
